@@ -110,15 +110,17 @@
     color: var(--ink-soft);
     padding: 8px 14px;
     border-radius: 999px;
-    transition: color .18s ease, background .18s ease;
+    transition: color .2s ease, background .2s ease, box-shadow .2s ease;
   }
-  .nav-links a:hover{ color: var(--ink); background: var(--surface); }
+  .nav-links a:hover,
+  .nav-links a:focus-visible{
+    color: #fff;
+    background: var(--ink);
+    box-shadow: 0 8px 20px -10px rgba(10, 12, 20, 0.45);
+  }
   .nav-cta{
-    background: var(--ink) !important;
-    color: #fff !important;
     margin-left: 4px;
   }
-  .nav-cta:hover{ background: #000 !important; }
 
   @media (max-width: 640px){
     .nav-links a:not(.nav-cta){ display: none; }
