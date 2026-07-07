@@ -204,6 +204,49 @@
     padding: 200px 0 120px;
     border-top: none;
   }
+  .hero-grid{
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    gap: 56px;
+    align-items: start;
+  }
+  .hero-content{ min-width: 0; }
+  .hero-photo{
+    position: relative;
+    width: 220px;
+    justify-self: end;
+  }
+  .hero-photo-frame{
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    box-shadow: 0 24px 48px -28px rgba(10, 12, 20, 0.28);
+    transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+  }
+  .hero-photo-frame:hover{
+    border-color: var(--accent-border);
+    box-shadow: 0 28px 56px -24px rgba(59, 74, 143, 0.24);
+    transform: translateY(-4px);
+  }
+  .hero-photo-frame img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+  .hero-photo-caption{
+    margin-top: 14px;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
   .hero-kicker{
     font-family: var(--font-mono);
     font-size: 13px;
@@ -847,6 +890,16 @@
   @media (max-width: 640px){
     section{ padding: 84px 0; }
     .hero{ padding: 140px 0 80px; }
+    .hero-grid{
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    .hero-photo{
+      width: 168px;
+      justify-self: start;
+      order: -1;
+    }
+    .hero-photo-frame{ border-radius: 20px; }
     .wrap{ padding: 0 22px; }
     .hero-meta{
       grid-template-columns: 1fr 1fr;
@@ -902,30 +955,40 @@
 <!-- HERO -->
 <header class="hero">
   <div class="wrap">
-    <p class="hero-kicker reveal">Software Engineer · Full Stack Developer (MERN)</p>
-    <h1 class="reveal">I build web platforms that businesses actually run on<em>.</em></h1>
-    <p class="hero-sub reveal">Full Stack Developer with 10 months of experience building production web applications from business requirements to deployment — React, Node.js, Express, MongoDB, REST APIs, AWS, authentication, and scalable backend systems.</p>
-    <div class="hero-actions reveal">
-      <a href="#work" class="btn btn-primary">View case studies</a>
-      <a href="#contact" class="btn btn-secondary">Get in touch</a>
-    </div>
-    <hr class="divider divider--soft reveal" style="margin-top:40px;">
-    <div class="hero-meta reveal">
-      <div class="hero-meta-item">
-        <div class="num">10 mo</div>
-        <div class="label">Experience · Jun 2025 – Present</div>
+    <div class="hero-grid">
+      <div class="hero-content">
+        <p class="hero-kicker reveal">Software Engineer · Full Stack Developer (MERN)</p>
+        <h1 class="reveal">I build web platforms that businesses actually run on<em>.</em></h1>
+        <p class="hero-sub reveal">Full Stack Developer with 10 months of experience building production web applications from business requirements to deployment — React, Node.js, Express, MongoDB, REST APIs, AWS, authentication, and scalable backend systems.</p>
+        <div class="hero-actions reveal">
+          <a href="#work" class="btn btn-primary">View case studies</a>
+          <a href="#contact" class="btn btn-secondary">Get in touch</a>
+        </div>
+        <hr class="divider divider--soft reveal" style="margin-top:40px;">
+        <div class="hero-meta reveal">
+          <div class="hero-meta-item">
+            <div class="num">10 mo</div>
+            <div class="label">Experience · Jun 2025 – Present</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="num">20+</div>
+            <div class="label">REST APIs built in production</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="num">B.Tech '25</div>
+            <div class="label">TIT Excellence, Bhopal · CGPA 8.13</div>
+          </div>
+          <div class="hero-meta-item">
+            <div class="num">1,500+</div>
+            <div class="label">Users on Udyami Connect</div>
+          </div>
+        </div>
       </div>
-      <div class="hero-meta-item">
-        <div class="num">20+</div>
-        <div class="label">REST APIs built in production</div>
-      </div>
-      <div class="hero-meta-item">
-        <div class="num">B.Tech '25</div>
-        <div class="label">TIT Excellence, Bhopal · CGPA 8.13</div>
-      </div>
-      <div class="hero-meta-item">
-        <div class="num">1,500+</div>
-        <div class="label">Users on Udyami Connect</div>
+      <div class="hero-photo reveal">
+        <div class="hero-photo-frame">
+          <img src="images/profile.png" alt="Gourav Mehar — Full Stack Developer" width="220" height="220" loading="eager">
+        </div>
+        <p class="hero-photo-caption">Gourav Mehar</p>
       </div>
     </div>
   </div>
